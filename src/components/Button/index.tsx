@@ -1,16 +1,16 @@
-import React from "react";
-import style from "./Button.module.scss";
+import React, { ReactNode } from 'react';
+import style from './Button.module.scss';
 
-class Botao extends React.Component {
-  render() {
-   
+interface BotaoProps {
+  children: ReactNode;
+}
 
-    return ( 
-      <button className={style.botao}>
-        Salvar
-      </button>
-    );
-  }
+const Botao: React.FC<BotaoProps> = ({ children }) => {
+  return (
+    <button className={style.botao}>
+      {children}
+    </button>
+  );
 }
 
 export default Botao;
